@@ -1,0 +1,12 @@
+docker-compose up -d
+docker-compose stop
+docker compose rm -f
+docker compose build
+docker-compose logs
+
+docker exec -ti alpha_nginx bash
+docker exec -ti alpha_php bash
+docker exec -ti alpha_mysql bash
+
+docker images
+docker rmi -f {IMAGE ID}
