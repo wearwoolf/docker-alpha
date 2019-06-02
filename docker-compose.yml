@@ -18,7 +18,10 @@ services:
     volumes_from:
       - php
   php:
-    build: ./build/docker/php
+    build:
+      context: ./build/docker/php
+      args:
+        PROJECT_ROOT_PATH: ${PROJECT_ROOT_PATH}
     container_name: ${PROJECT_NAME}_php
     volumes:
       - ./www:${PROJECT_ROOT_PATH}
